@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Alg</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../css/home.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="nav" style="text-align: center;">
+    <a href="../index.html">首页</a>
+    <a href="./Offer.html">剑指offer题解</a>
+    <a href="./TopicView.html"> 每日一题</a>
+    <a href="./TakingNotes.html">笔记</a>
+
+    <a href="./MoreView.html" class="right">更多学习算法网站</a>
+  </nav>
+
+  <div class="row" style="margin-top: 20px;">
+    <div class="moreViewMain">
+      <h3>每日一题</h3>
+      <h4>如何用 css 画一个三角形 ?</h4> 
+      <h5>答案：</h5>
+      <h5>1</h5>
+      <h5 class="triangleOne"></h5>
+      <h5>2</h5>
+      <h5 class="triangleTwo"></h5>
+      <h5>3</h5>
+      <h5 class="triangleThree"></h5>
+
+      <p>width: 0;</p>
+      <p> height: 0;</p>
+      <p>border-top: 50px solid skyblue;</p>
+      <p>border-right: 50px solid transparent;</p>
+      <p> border-left: 50px solid transparent;</p>
+      <p>其他二个同理</p>
+    </div>
+       
+    <div class="footer">
+      <p>本站邮箱由<del>1234567890@qq.com</del>更改为<u>3335914015@qq.com</u>
+        Copyright&copy; Bridge建站( 3<sup>rd</sup> September, 2046)备案号:xxxxxx
+      </p>
+    </div>
+  </div>
+
+</body>
+<style scoped>
+  .moreViewMain {
+    -ms-flex: 70%;
+    /* IE10 */
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+  }
+
+  .triangleOne {
+    width: 0;
+    height: 0;
+    border-top: 50px solid skyblue;
+    border-right: 50px solid transparent;
+    border-left: 50px solid transparent;
+  }
+  .triangleTwo {
+    width: 0;
+    height: 0;
+    border-top: 100px solid skyblue;
+    border-right: 100px solid transparent;
+  }
+  .triangleThree {
+		width: 0;
+		height: 0;
+		border-left: 69px solid transparent;  
+		border-right: 69px solid transparent;  
+		border-bottom: 120px solid skyblue; 
+}
+</style>
+
+</html>

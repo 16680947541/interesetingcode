@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Alg</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../../css/home.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="nav" style="text-align: center;">
+    <a href="../../index.html">首页</a>
+    <a href="../Offer.html">剑指offer题解</a>
+    <a href="../TopicView.html">每日一题</a>
+    <a href="../TakingNotes.html"> 笔记</a>
+    
+    
+    <a href="../MoreView.html" class="right">更多学习算法网站</a>
+  </nav>
+
+  <div class="row" style="margin-top: 20px;">
+    <div class="side">
+      <h3>算法模板</h3>
+      <a href="../../index.html">动态规划</a><br>
+      <a href="./HomeGreedView.html">贪心</a><br>
+      <a href="./HomeSort.html">十大排序</a><br>
+      <a href="./HomeWei.html">位运算</a><br>
+      <a href="../al.html" target="_blank">更多模板</a><br>
+
+      
+    </div>
+    <div class="main">
+      <h2>贪心</h2>
+      <div>
+        鼠标释放小球,鼠标离开框框小球暂停
+        <div>
+          <canvas id="canvas" width="400" height="350"></canvas>
+        </div>
+      </div>
+      <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        var raf;
+        var running = false;
+
+        var ball = {
+          x: 100,
+          y: 100,
+          vx: 5,
+          vy: 1,
+          radius: 25,
+          color: 'red',
+          draw: function () {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+            ctx.closePath();
+            ctx.fillStyle = this.color;
+            ctx.fill();
+          }
+        };
+
+        function clear() {
+          ctx.fillStyle = 'rgba(255,255,255,0.3)';
+        
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function draw() {
+          clear();
+          ball.draw();
+          ball.x += ball.vx;
+          ball.y += ball.vy;
+
+          if (ball.y + ball.vy > canvas.height || ball.y + ball.vy < 0) {
+            ball.vy = -ball.vy;
+          }
+          if (ball.x + ball.vx > canvas.width || ball.x + ball.vx < 0) {
+            ball.vx = -ball.vx;
+          }
+
+          raf = window.requestAnimationFrame(draw);
+        }
+
+        canvas.addEventListener('mousemove', function (e) {
+          if (!running) {
+            clear();
+            ball.x = e.offsetX;
+            ball.y = e.offsetY;
+            ball.draw();
+          }
+        });
+
+        canvas.addEventListener('click', function (e) {
+          if (!running) {
+            raf = window.requestAnimationFrame(draw);
+            running = true;
+          }
+        });
+
+        canvas.addEventListener('mouseout', function (e) {
+          window.cancelAnimationFrame(raf);
+          running = false;
+        });
+
+        ball.draw();
+
+
+      </script>
+    </div>
+
+    <div class="footer">
+      <p>本站邮箱由<del>1234567890@qq.com</del>更改为<u>3335914015@qq.com</u>
+        Copyright&copy; Bridge建站(3<sup>rd</sup> September, 2046)备案号:xxxxxx
+      </p>
+    </div>
+
+</body>
+<style scoped>
+  
+  canvas { 
+    border: 1px solid black; 
+  }
+  
+</style>
+</html>

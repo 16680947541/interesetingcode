@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Alg</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../../css/home.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="nav" style="text-align: center;">
+    <a href="../../index.html">首页</a>
+    <a href="../Offer.html">剑指offer题解</a>
+    <a href="../TopicView.html">每日一题</a>
+    <a href="../TakingNotes.html"> 笔记</a>
+
+
+    <a href="../MoreView.html" class="right">更多学习算法网站</a>
+  </nav>
+
+  <div class="row" style="margin-top: 20px;">
+    <div class="side">
+      <h3>算法模板</h3>
+      <a href="../../index.html">动态规划</a><br>
+      <a href="./HomeGreedView.html">贪心</a><br>
+      <a href="./HomeSort.html">十大排序</a><br>
+      <a href="./HomeWei.html">位运算</a><br>
+      <a href="../al.html" target="_blank">更多模板</a><br>
+
+
+    </div>
+    <div class="main">
+      <div class="box">
+        <span class="one"></span>
+        <span class="two"></span>
+      </div>
+      <script>
+        //刷新页面不出错
+        var timer = setTimeout(function () {
+          var one = document.querySelector('.one');
+          var two = document.querySelector('.two');
+          var date = new Date();
+          var year = date.getFullYear();
+          var month = date.getMonth() + 1;
+          var dates = date.getDate();
+          var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六',];
+          var day = arr[date.getDay()];
+          one.innerHTML = (year + '年' + month + '月' + dates + '日 ' + day);
+          two.innerHTML = (getTime());
+          clearInterval(timer);
+
+        });
+        //设置定时器
+        setInterval(function () {
+          //格式化日期 年月日
+          var one = document.querySelector('.one');
+          var two = document.querySelector('.two');
+          var date = new Date();
+          var year = date.getFullYear();
+          var month = date.getMonth() + 1;
+          var dates = date.getDate();
+          var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六',];
+          var day = arr[date.getDay()];
+          one.innerHTML = (year + '年' + month + '月' + dates + '日 ' + day);
+          two.innerHTML = (getTime());
+        }, 1000);
+
+
+
+        //要求封装一个函数返回当前的时分秒 格式：08：08：08
+        function getTime() {
+          var time = new Date();
+          var h = time.getHours();
+          h = h < 10 ? '0' + h : h;
+          var m = time.getMinutes();
+          m = m < 10 ? '0' + m : m;
+          var s = time.getSeconds();
+          s = s < 10 ? '0' + s : s;
+          return h + ':' + m + ':' + s;
+        }
+      </script>
+    </div>
+
+    <div class="footer">
+      <p>本站邮箱由<del>1234567890@qq.com</del>更改为<u>3335914015@qq.com</u>
+        Copyright&copy; Bridge建站(3<sup>rd</sup> September, 2046)备案号:xxxxxx
+      </p>
+    </div>
+
+</body>
+<style scoped>
+  .box {
+    width: 550px;
+    height: 70px;
+    background-color: rgb(153, 19, 93);
+    border: 4px solid #ccc;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 30px;
+    margin: 200px auto;
+    color: rgb(14, 13, 13);
+  }
+
+  .box span {
+    line-height: 70px;
+  }
+</style>
+
+</html>

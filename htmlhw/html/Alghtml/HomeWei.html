@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Alg</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../../css/home.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="nav" style="text-align: center;">
+    <a href="../../index.html">首页</a>
+    <a href="../Offer.html">剑指offer题解</a>
+    <a href="../TopicView.html">每日一题</a>
+    <a href="../TakingNotes.html"> 笔记</a>
+    
+    
+    <a href="../MoreView.html" class="right">更多学习算法网站</a>
+  </nav>
+
+  <div class="row" style="margin-top: 20px;">
+    <div class="side">
+      <h3>算法模板</h3>
+      <a href="../../index.html">动态规划</a><br>
+      <a href="./HomeGreedView.html">贪心</a><br>
+      <a href="./HomeSort.html">十大排序</a><br>
+      <a href="./HomeWei.html">位运算</a><br>
+      <a href="../al.html" target="_blank">更多模板</a><br>
+
+      
+    </div>
+    <div class="main">
+      <h4>位运算</h4>
+      <ol>
+        <li>指定位置的位运算：
+          <ul>
+            <li>将X最右边的n位清零:x & (~0 << n)</li>
+            <li>获取x的第n位值:(x >> n) & 1 </li>
+            <li>获取x的第n位的幂值:x & (1 << n)</li>
+            <li>将x最高位至第n位(含)清零:x & ((1 << n) - 1)</li>
+          </ul>
+        </li>
+        <li>常见操作：
+          <ul>
+            <li>求n的第k位数字: n >> k & 1</li>
+            <li>返回n的最后一位1：lowbit(n) = n & -n </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <div class="footer">
+      <p>本站邮箱由<del>1234567890@qq.com</del>更改为<u>3335914015@qq.com</u>
+        Copyright&copy; Bridge建站(3<sup>rd</sup> September, 2046)备案号:xxxxxx
+      </p>
+    </div>
+
+</body>
+<style scoped>
+  
+  canvas { 
+    border: 1px solid black; 
+  }
+  
+</style>
+</html>
